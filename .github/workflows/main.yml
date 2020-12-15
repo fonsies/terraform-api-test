@@ -15,5 +15,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "Hello ${{ github.event.inputs.volumeId }}!"
-        echo "- in ${{ github.event.inputs.region }}!"  
+        echo "The Volume ${{ github.event.inputs.volumeId }} has been deleted in the ${{ github.event.inputs.region }} region!"
