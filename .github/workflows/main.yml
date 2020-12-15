@@ -2,18 +2,18 @@ name: Manually triggered workflow
 on:
   workflow_dispatch:
     inputs:
-      name:
-        description: 'Person to greet'
+      volumeId:
+        description: 'Deleted EBS volume id'
         required: true
-        default: 'Alejandro'
-      home:
-        description: 'location'
+        default: 'none'
+      region:
+        description: 'Region name'
         required: false
-        default: 'Warsaw'
+        default: 'eu-west-1'
 jobs:
-  say_hello:
+  notify_deletion:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "Hello ${{ github.event.inputs.name }}!"
-        echo "- in ${{ github.event.inputs.home }}!"  
+        echo "Hello ${{ github.event.inputs.volumeId }}!"
+        echo "- in ${{ github.event.inputs.region }}!"  
